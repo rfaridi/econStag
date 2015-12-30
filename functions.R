@@ -15,11 +15,16 @@ lineCh <- function(df,myvar) {
   nums <- c(seq(1,len,by=3),len)
   my_breaks <- df[['year']][nums]
   my_breaks2 <-df[[myvar]][nums]
+  y_max <- max(df[[myvar]])
   dat2 <- data.frame(my_breaks,my_breaks2)
   #print(head(df))
   #print(head(dat2))
   localenv <- environment()
-  p <- ggplot(data=df,aes(x=year,y=get(myvar),group=""),environment=localenv)+
+  p <- ggplot(data=df,
+              aes(x=year,
+                  y=get(myvar),
+                  group=""),
+              environment=localenv)+
     geom_line(size=1) +
     geom_point(data=dat2,
                aes(x=my_breaks,
@@ -28,6 +33,7 @@ lineCh <- function(df,myvar) {
                shape=21,
                fill='White') +
     scale_x_discrete(breaks=my_breaks)+
+    expand_limits(x= c(0,len*1.05),y= c(0,y_max*1.05))+
     geom_text(data=dat2,
               aes(x=my_breaks,
                   y=my_breaks2,
