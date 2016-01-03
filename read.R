@@ -52,7 +52,9 @@ mo.dat <- mo.dat[-dim(mo.dat)[1]:-(dim(mo.dat)[1]-2),]
 dates <- seq(from=as.Date("jul012013","%b%d%Y"),by='month',length.out = 27)
 
 mo.dat <- mo.dat %>% 
-  mutate(dates=dates)
+  mutate(dates=dates,
+         gr_cm=(cap_mach-lag(cap_mach))/lag(cap_mach),
+         gr_exp=(Exports-lag(Exports))/lag(Exports))
 
 save(mo.dat, file ='Monthly_capMach_Exp.RData')
          #gr_cm=(cap_mach-lag(cap_mach))/lag(cap_mach))
