@@ -25,7 +25,10 @@ master <- data.frame(year=yr15,
 
 
 master$cap_mach[master$year=='FY05']=6876
-master$year <- factor(master$year,levels=master$year)
+master <- master %>%
+              mutate(year=factor(master$year,
+                                 levels=master$year),
+                     exp_yr_gw=(Exports-lag(Exports))/lag(Exports))
 
 
 save(master,file='./RData/master.RData')
