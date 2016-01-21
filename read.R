@@ -52,14 +52,14 @@ mo.dat <- data.frame(#months=as.character(yr[mSL]),
 # get rid of the last few rubbish texts
 mo.dat <- mo.dat[-dim(mo.dat)[1]:-(dim(mo.dat)[1]-2),]
 
-dates <- seq(from=as.Date("jul012013","%b%d%Y"),by='month',length.out = 27)
+dates <- seq(from=as.Date("jul012013","%b%d%Y"),by='month',length.out = nrow(mo.dat))
 
 mo.dat <- mo.dat %>% 
   mutate(dates=dates,
          gr_cm=(cap_mach-lag(cap_mach))/lag(cap_mach),
          gr_exp=(Exports-lag(Exports))/lag(Exports))
 
-save(mo.dat, file ='Monthly_capMach_Exp.RData')
+save(mo.dat, file ='./RData/Monthly_capMach_Exp.RData')
          #gr_cm=(cap_mach-lag(cap_mach))/lag(cap_mach))
 
 

@@ -1,0 +1,32 @@
+---
+output: 
+  html_document:
+    css: fcb_style.css
+    self_contained: false
+
+---
+
+The objective of my article is to explore the case of Bangladesh economic getting stagnated. Is this really true? Let's start by looking into export scenario:
+
+![exportYearly](/sites/all/themes/precision/images/figure/exp_yr.png)
+**Fig 1: Trend in Export Revenue**
+
+How about export growth?
+
+![exportYearlyGrowth](/sites/all/themes/precision/images/figure/exp_yr_gw_pl.png)
+**Fig 2: Growth in Export Revenue**
+
+ Let's by looking into the import of capital machineries data. Usually it should be a good indicator of domestic investment scenario.  
+
+![capMach](/sites/all/themes/precision/images/figure/cmach.png)
+**Fig 1: Trend in Capital Machineries Import**
+
+```{r}
+load('./RData/master.RData')
+head(master)
+```
+
+What we find is the trend generally upward but during the last five years from 2011-13, we see a decreasing trend and for the last two years things have picked up. 
+Now let's have a look at the exports data. 
+
+![Export Data](/sites/all/themes/precision/images/figure/exports.png)

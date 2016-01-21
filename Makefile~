@@ -1,0 +1,28 @@
+all: econStag.html
+
+R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+
+
+
+econStag.html: econStag.md	
+	R ${R_OPTS} -e "markdown::markdownToHTML('econStag.md','econStag.html',options=c('fragment_only'))"
+
+econStag.md: econStag.Rmd cmach.RData cmach.png
+	R CMD BATCH -e "knitr::knit('econStag.Rmd','econStag.md')"
+
+
+cmach.png: gr_capMach.R cmach.RData functions.R 
+	R CMD BATCH ${R_OPTS} $<
+
+cmach.RData: capMach.R
+	R CMD BATCH ${R_OPTS} $<
+
+clean: 
+	rm -f *.Rout
+
+
+
+
+
+
+

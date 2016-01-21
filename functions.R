@@ -1,7 +1,11 @@
 library(ggplot2)
+library(scales)
 themeLine <- theme_grey()+
   theme(panel.background=element_blank(),
         axis.title=element_blank(),
+        axis.text.x=element_text(angle = 40,
+                                 vjust =.5),
+        plot.title=element_text(size = rel(1.5),vjust = .5),
         panel.grid.major.y=
           element_line(linetype='dotted',
                        color='grey'),

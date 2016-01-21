@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title></title>
+
+<script src="econStag_files/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="econStag_files/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<script src="econStag_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="econStag_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="econStag_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="econStag_files/highlight/default.css"
+      type="text/css" />
+<script src="econStag_files/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+<link rel="stylesheet" href="fcb_style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+
+
+<p>The objective of my article is to explore the case of Bangladesh economic getting stagnated. Is this really true? Let’s start by looking into export scenario:</p>
+<p><img src="/sites/all/themes/precision/images/figure/exp_yr.png" alt="exportYearly" /> <strong>Fig 1: Trend in Export Revenue</strong></p>
+<p>How about export growth?</p>
+<p><img src="/sites/all/themes/precision/images/figure/exp_yr_gw_pl.png" alt="exportYearlyGrowth" /> <strong>Fig 2: Growth in Export Revenue</strong></p>
+<p>Let’s by looking into the import of capital machineries data. Usually it should be a good indicator of domestic investment scenario.</p>
+<p><img src="/sites/all/themes/precision/images/figure/cmach.png" alt="capMach" /> <strong>Fig 1: Trend in Capital Machineries Import</strong></p>
+<pre class="r"><code>load(&#39;./RData/master.RData&#39;)
+head(master)</code></pre>
+<pre><code>##   year cap_mach Exports  exp_yr_gw
+## 1 FY94      520    9799         NA
+## 2 FY95      796   13130 0.33993265
+## 3 FY96     1221   13857 0.05536938
+## 4 FY97     1422   16564 0.19535253
+## 5 FY98     1293   20393 0.23116397
+## 6 FY99     1411   20851 0.02245869</code></pre>
+<p>What we find is the trend generally upward but during the last five years from 2011-13, we see a decreasing trend and for the last two years things have picked up. Now let’s have a look at the exports data.</p>
+<p><img src="/sites/all/themes/precision/images/figure/exports.png" alt="Export Data" /></p>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
